@@ -37,7 +37,9 @@ header {
   align-items: center;
   height: 60px;
   width: 100%;
-  background-color: #5F8DA7;
+  background-color: #5f8da7cf;
+  backdrop-filter: blur(25px);
+  border-bottom: 1px solid rgb(175, 175, 175);
   font-family: 'Lobster', cursive;
   font-size: 1.6rem;
   color: white;
@@ -77,16 +79,17 @@ nav li a {
 }
 
 nav a:hover {
-  color: #D15C4C;
+  color: #ff9587;
   transition: all 0.25s ease-in-out;
   text-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.275);
   margin-bottom: 3px;
 }
 
-nav .burger {
+nav #burger {
   margin-right: 10px;
   height: 30px;
   width: auto;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -104,14 +107,70 @@ nav .burger {
 @media only screen and (min-width: 769px) {
   .burger-menu {
     display: none;
-   }
- }
+  }
+}
 
 @media only screen and (max-width: 768px) {
   .normal-menu {
     display: none;
-   }
- }
+  }
+}
+
+/* Open Burger Menu */
+
+#opened-burger-menu {
+  display: none;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  transition: backdrop-filter 3s;
+}
+
+#menu-box {
+  float: right;
+  width: 200px;
+  height: 100vh;
+  background-color: #5F8DA7;
+}
+
+#menu-box #close {
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+  height: 30px;
+  width: auto;
+  cursor: pointer;
+}
+
+#menu-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Lobster', cursive;
+  color: white;
+}
+
+#menu-container ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+} 
+
+#menu-container h2 {
+  margin-top: 50px;
+  color: white;
+  font-size: 3rem;
+} 
+
+#menu-container a {
+  color: white;
+  font-size: 1.6rem;
+} 
 
 
 /* Main Section */
